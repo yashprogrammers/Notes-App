@@ -1,0 +1,73 @@
+
+
+/* Sidebar base */
+.sidebar {
+  width: 260px;
+  height: 85vh;
+  background: #202124;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8px 0;
+  top: 0;
+  left: 0;
+}
+
+/* Sidebar list */
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar li {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 0 25px 25px 0;
+  transition: background 0.2s;
+}
+
+.sidebar li:hover {
+  background: #3c4043;
+}
+
+.sidebar li.active {
+  background: #5f462e;
+  font-weight: bold;
+}
+
+.material-symbols-outlined {
+  font-size: 22px;
+}
+
+/* Footer */
+.footer {
+  font-size: 12px;
+  padding: 12px 20px;
+  color: #a1a1a1;
+  cursor: pointer;
+}
+
+/* Responsive sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 70px;
+  }
+
+  .sidebar li {
+    justify-content: center;
+    border-radius: 50%;
+    padding: 12px;
+  }
+
+  .sidebar li span + span {
+    display: none; /* hide text, show only icons */
+  }
+
+  .footer {
+    display: none; /* hide footer on small screens */
+  }
+}

@@ -1,0 +1,48 @@
+<main>
+  <div style="height: fit-content;display: flex;justify-content: center;">
+    <div class="main-input">
+      <input type="text" placeholder="Take a note..." id="input" />
+      <div class="btns">
+        <span class="material-symbols-outlined">check_box</span>
+        <span class="material-symbols-outlined">draw</span>
+        <span class="material-symbols-outlined">image</span>
+      </div>
+    </div>
+
+    <form action="/new" method="post">
+      <div class="text-input">
+        <div style="display: grid; grid-template-columns: auto 30px">
+          <input
+            type="text"
+            name="title"
+            style="padding: 4px; font-size: 22px; font-weight: bold"
+            placeholder="Title"
+          />
+          <button type="submit" style="background: none; border: none">
+            <span class="material-symbols-outlined">send</span>
+          </button>
+        </div>
+        <textarea
+          name="desc"
+          style="
+            margin-top: 10px;
+            padding: 4px;
+            font-size: 16px;
+            max-width: 550px;
+            min-width: 550px;
+          "
+          placeholder="Write note here..."
+        ></textarea>
+        <div class="btns">
+          <div>
+            <span class="material-symbols-outlined">keep</span>
+            <span class="material-symbols-outlined">delete</span>
+            <span class="material-symbols-outlined">archive</span>
+          </div>
+          <p>close</p>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="cards-content"><%- include('notes') %></div>
+</main>

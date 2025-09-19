@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sidebar.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <link rel="stylesheet" href="main.css">
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background: #202124;
+        color: #e8eaed;
+      }
+      hr {
+        margin-bottom: 5px;
+        border: 1px solid rgba(128, 128, 128, 0.474);
+      }
+      .parent {
+        display: grid;
+        grid-template-columns: 300px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <nav><%- include("navbar") %></nav>
+    <hr>
+    <div class="parent">
+      <%- include('sidebar') %>
+      <%- include('main') %>
+    </div>
+      
+    
+    <script src="script.js"></script>
+  </body>
+</html>

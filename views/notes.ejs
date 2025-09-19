@@ -1,0 +1,18 @@
+<div class="notes" style="display: flex;flex-wrap: wrap;gap: 10px;margin-top: 20px;">
+  <% for (const e of note) { %>
+  <div
+    class="note"
+    style="
+      padding: 15px;
+      border: 1px solid #d3d3d359;
+      width: fit-content;
+      width: 230px;
+      min-height: 230px;
+      border-radius: 5px;
+    "
+  >
+    <h3 style="margin-bottom: 10px"><%= e.title %></h3>
+    <p><%= e.desc %></p>
+  </div>
+  <% } %>
+</div>
