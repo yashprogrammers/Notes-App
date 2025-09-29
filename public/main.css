@@ -28,7 +28,7 @@ span {
 .text-input {
     display: grid;
     grid-template-columns: 550px;
-    padding: 12px;
+    padding: 8px;
     border: 1px solid rgba(182, 182, 182, 0.407);
     margin-top: 20px;
     display: none;
@@ -44,5 +44,14 @@ span {
     display: flex;
     justify-content: space-between;
     padding: 0px 5px;
-    margin-top: 5px;
+    margin-top: 0px;
+}
+.text-input .btns span {
+    font-size: 20px;
+    margin-right: 4px;
+    padding: 5px;
+}
+.text-input .btns span:hover {
+    background-color: rgba(128, 128, 128, 0.184);
+    border-radius: 25px;
 }

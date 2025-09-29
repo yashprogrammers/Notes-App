@@ -2,15 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://www.gstatic.com/images/branding/product/1x/keep_2020q4_48dp.png"
+    />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Keep Notes</title>
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.snow.css"
+      rel="stylesheet"
+    /> -->
+
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="sidebar.css" />
     <link rel="stylesheet" href="navbar.css" />
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main.css" />
     <style>
       * {
         margin: 0%;
@@ -26,11 +36,8 @@
         margin-bottom: 5px;
         border: 1px solid rgba(128, 128, 128, 0.474);
       }
-      .parent {
-        display: grid;
-        grid-template-columns: 300px auto;
-      }
     </style>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/quill@2/dist/quill.js"></script> -->
   </head>
   <body>
     <nav><%- include("navbar") %></nav>
@@ -39,8 +46,9 @@
       <%- include('sidebar') %>
       <%- include('main') %>
     </div>
-      
     
+
+
     <script src="script.js"></script>
   </body>
 </html>

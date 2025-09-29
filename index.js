@@ -3,6 +3,7 @@ const path = require("path")
 const app = express();
 const PORT = 3000;
 const mongoose = require('mongoose');
+const methodOverride = require("method-override")
 
 main().then(res => console.log("mongoose connected")
 ).catch(err => console.log(err));
@@ -13,12 +14,10 @@ async function main() {
 
 const noteSchema = mongoose.Schema({
     title: {
-        type: String,
-        required: true
+        type: String
     },
     desc: {
-        type: String,
-        required: true
+        type: String
     },
     pin: {
         type: Boolean,
@@ -41,10 +40,12 @@ app.set("views", path.join(__dirname, "views"))
 app.use(express.static(path.join(__dirname, "public")))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
+app.use(methodOverride("_method"))
+
 
 app.get('/', async (req, res) => {
-    let note = await Note.find({})
-    res.render("index.ejs", {note})
+    let notes = await Note.find({})
+    res.render("index.ejs", {notes})
 });
 
 app.post("/new",async (req, res) => {
@@ -53,6 +54,19 @@ app.post("/new",async (req, res) => {
     await newnote.save()
     res.redirect("/")
 })
+
+// app.get("/api/notes/:id", async (req, res) => {
+//     let {id} = req.params;
+//     let note = await Note.findById(id)
+//     res.send(note)
+// })
+
+app.delete("/note/:id",async (req, res) => {
+    let {id} = req.params;
+    await Note.deleteOne({_id: id})
+    res.redirect("/")
+})
+
 
 app.get("/api/notes",async (req, res) => {
     let allnotes = await Note.find({})
